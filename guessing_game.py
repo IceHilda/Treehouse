@@ -33,15 +33,18 @@ def start_game():
     print("Welcome to the guessing game!")
     answer = random.randint(1, 10)
     guess = int(input("What is your guess? (1-10)  "))
+    guess_count = 1
     while guess != answer:
         if guess < answer:
             print("It's higher")
             guess = int(input("What is your guess? (1-10)  "))
+            guess_count += 1
         elif guess > answer:
             print("It's lower")
             guess = int(input("What is your guess? (1-10)  "))
-    print("Got it!, you win! Thanks for playing! Game over.")
-    # add #4
+            guess_count += 1
+    print("Got it, you win! It took you {} guesses! Thanks for playing! Game over.".format(guess_count))
+
 
 
 # Kick off the program by calling the start_game function.
