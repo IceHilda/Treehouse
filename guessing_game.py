@@ -46,8 +46,8 @@ def start_game():
             else:
                 guessing = False
                 print("Got it, you win! It took you {} guesses! Thanks for playing! Game over.".format(guess_count))
-        except:
-            pass
+        except ValueError:
+            print("Oh no, that guess is not within the parameters. Please enter a number 1-10 and try again!")
 
 
 # Kick off the program by calling the start_game function.
